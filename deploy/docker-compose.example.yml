@@ -1,0 +1,27 @@
+services:
+  database:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: investment_manager
+      POSTGRES_USER: investment_manager
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env}
+    ports:
+      - "${DB_HOST_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U investment_manager -d investment_manager"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build:
+      context: ..
+      dockerfile: deploy/backend.Dockerfile
+      target: dev
+    environment:
+      DATABASE_URL: postgresql+asyncpg://investment_manager:${DB_PASSWORD:?set DB_PASSWORD in .env}@database:5432/investment_manager
+    ports:
+      - "${BACKEND_PORT:-8000}:10026"
+    depends_on:
+      database:
+        condition: service_healthy

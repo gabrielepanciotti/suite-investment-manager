@@ -1,0 +1,3 @@
+# Alembic revisions land here.
+#   cd backend && DATABASE_URL=... alembic revision --autogenerate -m "create X"
+#   cd backend && DATABASE_URL=... alembic upgrade head

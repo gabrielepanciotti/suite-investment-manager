@@ -1,0 +1,6 @@
+# Test-only dependencies — never installed in the container image.
+-r requirements.txt
+pytest
+pytest-asyncio
+httpx
+aiosqlite

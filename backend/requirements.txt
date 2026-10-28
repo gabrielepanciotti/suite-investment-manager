@@ -1,0 +1,9 @@
+# suite-backend-core is NOT on PyPI: deploy/prebuild.sh copies it into
+# backend/vendor/ and deploy/backend.Dockerfile pip-installs it from there.
+# Listing it here makes `pip install -r requirements.txt` fail the image build
+# (same fix as Health). On the host it is linked by `suite_core.nodes link`.
+fastapi
+uvicorn[standard]
+# The node owns its data: Alembic scaffold in backend/migrations, asyncpg driver.
+alembic
+asyncpg

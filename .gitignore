@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Build output
+dist/
+build/
+
+# Misc
+.DS_Store
+*.log
+# >>> suite-managed >>>
+node.config.resolved.json
+.claude/agents/*-api-reviewer.md
+.ai/agents/*-api-reviewer.md
+.claude/agents/*-backend-impl.md
+.ai/agents/*-backend-impl.md
+.claude/agents/*-bot-handler.md
+.ai/agents/*-bot-handler.md
+.claude/agents/*-cli-dev.md
+.ai/agents/*-cli-dev.md
+.claude/agents/*-db-migrator.md
+.ai/agents/*-db-migrator.md
+.claude/agents/*-integration-dev.md
+.ai/agents/*-integration-dev.md
+.claude/agents/*-node-persona.md
+.ai/agents/*-node-persona.md
+.claude/agents/*-react-component.md
+.ai/agents/*-react-component.md
+.claude/agents/*-ui-reviewer.md
+.ai/agents/*-ui-reviewer.md
+.mcp.json
+opencode.json
+.superpowers/
+.brain-inbox/
+brain/*
+!brain/README.md
+**/brain/*
+!**/brain/README.md
+.obsidian/
+.venv/
+.env
+.env.production
+frontend/vendor/*
+backend/vendor/*
+*.stackdump
+# <<< suite-managed <<<
